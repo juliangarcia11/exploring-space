@@ -1,0 +1,8 @@
+<h2>
+  Details
+</h2>
+<ul class="info-cards">
+  <li *ngFor="let card of infoCards" (click)="onSelect(card)">
+    <span class="badge">{{card.id | date:'dd-MM-yyyy'}}</span> {{card.explination}}
+  </li>
+</ul>

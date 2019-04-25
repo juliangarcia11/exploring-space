@@ -1,0 +1,25 @@
+<nb-layout>
+
+<!-- HEADER -->
+  <nb-layout-header fixed>
+    <h1>
+      {{ title }}!
+    </h1>
+  </nb-layout-header>
+
+<!-- SIDEBAR -->
+  <nb-sidebar>
+    <!-- SIDEBAR BODY -->
+    <app-sidebar-nav></app-sidebar-nav>
+    <!-- SIDEBAR FOOTER -->
+    <nb-sidebar-footer>
+      Developed by Julian Garcia
+    </nb-sidebar-footer>
+  </nb-sidebar>
+
+<!-- MAIN BODY -->
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>
