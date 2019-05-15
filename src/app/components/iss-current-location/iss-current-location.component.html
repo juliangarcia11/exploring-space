@@ -1,0 +1,13 @@
+<nb-card *ngIf="lastKnownLocation">
+  <nb-card-header>
+    ISS Location At: {{ lastKnownLocation.timestamp | date:'fullTime' }}
+  </nb-card-header>
+  <nb-card-body>
+    <div>
+      Latitude: {{ lastKnownLocation.iss_position.latitude }}
+    </div>
+    <div>
+      Longitude: {{ lastKnownLocation.iss_position.longitude }}
+    </div>
+  </nb-card-body>
+</nb-card>
