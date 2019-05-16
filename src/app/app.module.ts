@@ -15,7 +15,7 @@ import { ApodComponent } from './components/apod/apod.component';
 import { IssCurrentLocationComponent } from './components/iss-current-location/iss-current-location.component';
 
 // Services
-import { IssCurrentLocationService } from './services';
+import { IssCurrentLocationService, PeopleInSpaceService } from './services';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { IssCurrentLocationService } from './services';
   ],
   providers: [
     // services
-    IssCurrentLocationService
+    IssCurrentLocationService,
+    PeopleInSpaceService
   ],
   bootstrap: [AppComponent]
 })

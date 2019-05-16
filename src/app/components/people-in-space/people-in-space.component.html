@@ -1,3 +1,10 @@
-<p>
-  people-in-space works!
-</p>
+<nb-card *ngIf="lastKnownPeople">
+  <nb-card-header>
+    {{ lastKnownPeople.number }} People Currently In Space:
+  </nb-card-header>
+  <nb-card-body>
+    <div *ngFor="let person of lastKnownPeople.people">
+      <b>{{ person.name }}</b> is on the {{ person.craft }}
+    </div>
+  </nb-card-body>
+</nb-card>
