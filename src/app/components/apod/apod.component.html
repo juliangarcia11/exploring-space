@@ -1,3 +1,15 @@
-<p>
-  apod works!
-</p>
+<nb-card>
+  <nb-card-header>
+    Astronomy Picture of the Day
+  </nb-card-header>
+  <nb-card-body>
+    <nb-card status="info" *ngFor="let apod of apods" class="apod-card">
+      <nb-card-header>
+        {{ apod.date }}: {{ apod.title}}
+      </nb-card-header>
+      <nb-card-body>
+        <img src="{{ apod.url }}">
+      </nb-card-body>
+    </nb-card>
+  </nb-card-body>
+</nb-card>
