@@ -1,13 +1,22 @@
-<nb-card *ngIf="lastKnownLocation">
+<nb-card>
   <nb-card-header>
-    ISS Location At: {{ lastKnownLocation.timestamp | date:'fullTime' }}
+      ISS Locations
+    <button nbButton hero status="info" (click)="updateLocationList()" class="get-iss-location-btn">Get Current ISS Location</button>
   </nb-card-header>
   <nb-card-body>
-    <div>
-      Latitude: {{ lastKnownLocation.iss_position.latitude }}
-    </div>
-    <div>
-      Longitude: {{ lastKnownLocation.iss_position.longitude }}
-    </div>
+    <nb-card status="info" *ngFor="let location of lastKnownLocation" class="iss-location-card">
+      <nb-card-header>
+        {{ location.timestamp * 1000 | date:'mediumTime' }}
+      </nb-card-header>
+      <nb-card-body>
+        <div>
+          Latitude: {{ location.iss_position.latitude }}
+        </div>
+        <div>
+          Longitude: {{ location.iss_position.longitude }}
+        </div>
+      </nb-card-body>
+    </nb-card>
   </nb-card-body>
 </nb-card>
+

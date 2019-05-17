@@ -13,11 +13,11 @@ export class SidebarNavComponent implements OnInit {
 
   // Add a new object to the array for each new nav item (follow the example)
   items = [
-    {
-      title: 'APOD',
-      link: ['apod']
-      // url: ["https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"],
-    },
+    // { // TODO after api key
+    //   title: 'APOD',
+    //   link: ['apod']
+    //   // url: ["https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"],
+    // },
     {
       title: 'ISS Current Location',
       link: ['iss-current-location'],
@@ -30,7 +30,7 @@ export class SidebarNavComponent implements OnInit {
     // {
     //   title: 'Change Password',
     //   link: ['change-password'], // link using the project router
-    //   url: ["https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"], // hyperlink
+    //   url: ["https://google.com], // hyperlink
     // },
   ];
 

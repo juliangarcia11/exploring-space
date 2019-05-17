@@ -2,13 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbButtonModule } from '@nebular/theme';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Components
-import { InfoCardsComponent } from './components/info-cards/info-cards.component';
 import { SidebarNavComponent } from './components/sidebar-nav/sidebar-nav.component';
 import { PeopleInSpaceComponent } from './components/people-in-space/people-in-space.component';
 import { ApodComponent } from './components/apod/apod.component';
@@ -20,7 +19,6 @@ import { IssCurrentLocationService, PeopleInSpaceService } from './services';
 @NgModule({
   declarations: [
     AppComponent,
-    InfoCardsComponent,
     SidebarNavComponent,
     PeopleInSpaceComponent,
     ApodComponent,
@@ -35,7 +33,8 @@ import { IssCurrentLocationService, PeopleInSpaceService } from './services';
     NbLayoutModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
-    NbCardModule
+    NbCardModule,
+    NbButtonModule
   ],
   providers: [
     // services
