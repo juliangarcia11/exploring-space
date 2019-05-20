@@ -1,7 +1,7 @@
 <nb-card>
   <nb-card-header>
       ISS Locations
-    <button nbButton hero status="info" (click)="updateLocationList()" class="get-iss-location-btn">Get Current ISS Location</button>
+    <button nbButton hero status="info" (click)="updateLocationList()" class="float-right">Get Current ISS Location</button>
   </nb-card-header>
   <nb-card-body>
     <nb-card status="info" *ngFor="let location of lastKnownLocation" class="iss-location-card">
