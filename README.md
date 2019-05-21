@@ -6,6 +6,8 @@ Here we have a small web application that hooks up to a few outer space themed A
 
 If you have any suggestions or would like to see something, please drop me a line :D
 
+[Check out my TODO list, if you're curious](TODO.md)
+
 ## Running the Web App Locally
 
 Run `npm start` for a dev server. Navigate to `http://localhost:8000/`. The app will automatically reload if you change any of the source files.

@@ -1,12 +1,22 @@
 # TODO List :]
-* ~~Create default landing page~~
-* ~~Get APOD API key~~
-* ~~Update README~~
-* Update e2e components with old "Tour" variables left over
-* ~~Retrieve & Display API data as plain JSON in various components~~
-* In APOD, display API data in calendar layout of flip-able cards
-* In ISS Current Location, show current location on map/globe and allow a user to input their location to request their next pass time
-* In PeopleInSpace, display astronaut data in a table
+
+### APOD
+* Allow user to select a range of dates to be displayed
+* Allow the user to change the layout of how the cards are displayed:
+  * ~~Day View (Includes `mm-dd-yyyy` Date, Image, and Description)~~
+  * Week View (Includes `mm-dd` Dates, and Images)
+  * Month View (Includes `dd` Dates, and Images)
+
+### ISS Current Location
+* Get current location on a timer and added it to the list
+* Find a decent map pluggin to display lat/long coordinates
+* Display lat/long coordinates over time on this map to show the path of the ISS
+* Create 'ISS Passover' section where a user can input their location to see the next passover
+
+### People In Space
+* Display info about each person?
+* Display info about each craft?
+* Display upcoming missions?
 
 ## APIs to Try
 - [Game of Thrones](https://anapioficeandfire.com/)
