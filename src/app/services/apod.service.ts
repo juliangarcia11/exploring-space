@@ -7,13 +7,27 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApodService {
-  private serviceUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+  private apiKey = '9poEouZ0VjjQo8ieQF00djY57RnRdjKdEZ7C52vr';
+  private serviceUrl = 'https://api.nasa.gov/planetary/apod';
   private PARAMS = ['date', 'hd', 'api_key'];
+  private requestOptions: string;
 
   constructor(private http: HttpClient) { }
 
-  getApod(): Observable<Apod> {
-    return this.http.get<Apod>(this.serviceUrl);
+  /**
+   * Fires off a request to the Service's API after forming the request options properly
+   * @param options Can include: 'date'
+   */
+  getApod(options?: {}): Observable<Apod> {
+    // clear out any left over options from the last request
+    this.requestOptions = '?api_key=' + this.apiKey;
+
+    // check for the date request param
+    if (options && options['date'] && options['date'].length > 0) {
+      this.requestOptions += '&date=' + options['date'];
+    }
+
+    return this.http.get<Apod>(this.serviceUrl + this.requestOptions);
   }
 }
 

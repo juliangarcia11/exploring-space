@@ -2,21 +2,20 @@
   <nb-card-header>
     <div class="title">Astronomy Picture of the Day</div>
     <div class="inputs-container float-right pad-right-2">
-      <input nbInput placeholder="Start Date" [nbDatepicker]="startDatePicker" class="margin-right date-picker-input">
-      <nb-datepicker #startDatePicker [min]="dateMin" [max]="endDate" (dateChange)="setStartDate($event)"></nb-datepicker>
-      <input nbInput placeholder="End Date" [nbDatepicker]="endDatePicker" class="margin-right date-picker-input">
-      <nb-datepicker #endDatePicker [min]="startDate" [max]="dateMax" (dateChange)="setEndDate($event)"></nb-datepicker>
-      <button nbButton hero status="info" (click)="requestApod()">Go</button>
+      <input nbInput placeholder="Date" [(ngModel)]="dateInput" [nbDatepicker]="datePicker" [disabled]="loading" class="margin-right date-picker-input">
+      <nb-datepicker #datePicker [min]="dateMin" [max]="dateMax" (dateChange)="setDate($event)"></nb-datepicker>
+      <button nbButton hero status="info" (click)="requestApod()" [disabled]="loading">Go</button>
     </div>
   </nb-card-header>
   <nb-card-body>
     <nb-card class="apod-card" status="primary" *ngFor="let apod of apods">
       <nb-card-header>
-        {{ apod.date }}: {{ apod.title}}
+        <div>{{ apod.title }}</div>
+        <div class="float-right">{{ apod.date | date:'MM-dd-yyyy' }}</div>
       </nb-card-header>
       <nb-card-body>
+        <div>{{ apod.explanation }}</div>
         <img src="{{ apod.url }}">
-        <span>{{ apod.explanation }}</span>
       </nb-card-body>
     </nb-card>
   </nb-card-body>

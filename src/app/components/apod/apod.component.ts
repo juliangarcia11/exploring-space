@@ -9,43 +9,57 @@ import {NbDateService} from '@nebular/theme';
   styleUrls: ['./apod.component.sass']
 })
 export class ApodComponent implements OnInit {
+  private loading: boolean;
   private apods: Apod[] = [];
-  private startDate: Date;
-  private endDate: Date;
+  private date: Date;
   private dateMin: Date;
   private dateMax: Date;
+  private dateInput: any;
 
   constructor(
     private service: ApodService,
     private dateService: NbDateService<Date>
     ) {
+    this.loading = true;
     this.dateMax = this.dateService.today();
     this.dateMin = this.dateService.parse('06-20-1995', 'MM\\dd\\yyyy');
   }
 
   ngOnInit() {
-    this.service.getApod().subscribe(
-      (data: Apod) => this.apods.push(new Apod(data)),
-      err => console.log('Error:', err),
-      () => console.log('this', this)
-    );
+    // get today's APOD and render the component
+    this.requestApod();
   }
 
-  public setStartDate(date: Date): void {
-    this.startDate = new Date(date);
+  /**
+   * Set the date of the APOD to request
+   * @param date Date
+   */
+  public setDate(date: Date): void {
+    this.date = new Date(date);
   }
 
-  public setEndDate(date: Date): void {
-    this.endDate = new Date(date);
-  }
-
+  /**
+   * Triggered via the 'Go' button, fires off a request to the api
+   * If the user has selected a date, the APOD of that date will be requested
+   * By default, the service returns today's APOD to be added to the component's view
+   */
   public requestApod(): void {
-    // TODO Do we want to have two date pickers so that we can do all APODs from start until Today and then also
-    // TODO yes. writing this functionallity will assist us in what we need to do later too
-    const helper = {
-      'this': this
-    };
-    console.log('HELPER', helper);
+    // gather request options to pass on to the service
+    let reqOptions = {date: ''};
+    if (this.date) {
+      reqOptions.date = this.dateService.format(this.date, 'yyyy-MM-dd');
+    }
+
+    // use the service to ask the api for the APOD data
+    this.service.getApod(reqOptions).subscribe(
+      (data: Apod) => this.apods.unshift(new Apod(data)), // display the data on return
+      err => console.log('Error:', err), // or log the error TODO: toast error popup
+      () => {
+        // finally, reset view params to get ready for the next request
+        this.dateInput = null;
+        this.loading = false;
+      }
+    );
   }
 }
 

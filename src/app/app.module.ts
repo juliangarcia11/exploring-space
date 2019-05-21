@@ -24,6 +24,7 @@ import { IssCurrentLocationComponent } from './components/iss-current-location/i
 // Services
 import { IssCurrentLocationService, PeopleInSpaceService } from './services';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,13 +40,14 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbThemeModule.forRoot({name: 'cosmic'}),
     NbLayoutModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbCardModule,
     NbButtonModule,
-    NbDatepickerModule.forRoot()
+    NbDatepickerModule.forRoot(),
+    FormsModule
   ],
   providers: [
     // services
