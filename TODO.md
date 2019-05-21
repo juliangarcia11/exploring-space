@@ -1,7 +1,7 @@
 # TODO List :]
 * ~~Create default landing page~~
 * ~~Get APOD API key~~
-* Update README
+* ~~Update README~~
 * Update e2e components with old "Tour" variables left over
 * ~~Retrieve & Display API data as plain JSON in various components~~
 * In APOD, display API data in calendar layout of flip-able cards
