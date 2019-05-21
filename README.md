@@ -1,15 +1,4 @@
 # ExploringSpace
-
-## TODO
-* Update README
-* Update e2e components with old "Tour" variables left over
-* Retrieve & Display API data as plain JSON in various components
-* In APOD, display API data in calendar layout of flip-able cards
-* In ISS Current Location, show current location on map/globe and allow a user to input their location to request their next pass time
-* In PeopleInSpace, display astronaut data in a table
-
-
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server

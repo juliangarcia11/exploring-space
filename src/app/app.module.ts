@@ -2,7 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbButtonModule } from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbMenuModule,
+  NbCardModule,
+  NbButtonModule,
+  NbDatepickerModule
+} from '@nebular/theme';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,7 +42,8 @@ import { IssCurrentLocationService, PeopleInSpaceService } from './services';
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbCardModule,
-    NbButtonModule
+    NbButtonModule,
+    NbDatepickerModule.forRoot()
   ],
   providers: [
     // services

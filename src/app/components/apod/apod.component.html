@@ -1,14 +1,22 @@
 <nb-card>
   <nb-card-header>
-    Astronomy Picture of the Day
+    <div class="title">Astronomy Picture of the Day</div>
+    <div class="inputs-container float-right pad-right-2">
+      <input nbInput placeholder="Start Date" [nbDatepicker]="startDatePicker" class="margin-right date-picker-input">
+      <nb-datepicker #startDatePicker [min]="dateMin" [max]="endDate" (dateChange)="setStartDate($event)"></nb-datepicker>
+      <input nbInput placeholder="End Date" [nbDatepicker]="endDatePicker" class="margin-right date-picker-input">
+      <nb-datepicker #endDatePicker [min]="startDate" [max]="dateMax" (dateChange)="setEndDate($event)"></nb-datepicker>
+      <button nbButton hero status="info" (click)="requestApod()">Go</button>
+    </div>
   </nb-card-header>
   <nb-card-body>
-    <nb-card status="info" *ngFor="let apod of apods" class="apod-card">
+    <nb-card class="apod-card" status="primary" *ngFor="let apod of apods">
       <nb-card-header>
         {{ apod.date }}: {{ apod.title}}
       </nb-card-header>
       <nb-card-body>
         <img src="{{ apod.url }}">
+        <span>{{ apod.explanation }}</span>
       </nb-card-body>
     </nb-card>
   </nb-card-body>
