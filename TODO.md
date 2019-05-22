@@ -9,15 +9,22 @@
 
 ### ISS Current Location
 * Get current location on a timer and added it to the list
-* Find a decent map pluggin to display lat/long coordinates
+* Find a decent map pluggin to display lat/long coordinates (Cesium?)
 * Display lat/long coordinates over time on this map to show the path of the ISS
 * Create 'ISS Passover' section where a user can input their location to see the next passover
 
 ### People In Space
 * Display info about each person?
 * Display info about each craft?
-* Display upcoming missions?
+
+### Home Page
+* News Feed
+* API credits?
 
 ## APIs to Try
-- [Game of Thrones](https://anapioficeandfire.com/)
+- [Launch Library](https://launchlibrary.net/docs/1.3/api.html)
 - [Asteroids and Comets](https://www.spacereference.org/)
+- [Star Wars](https://swapi.co/)
+- [FOAAS (nsfw - curse words)](http://www.foaas.com/)
+- [Game of Thrones](https://anapioficeandfire.com/)
+
