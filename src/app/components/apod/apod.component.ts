@@ -9,12 +9,15 @@ import {NbDateService} from '@nebular/theme';
   styleUrls: ['./apod.component.sass']
 })
 export class ApodComponent implements OnInit {
+  private VIEWTYPES = {day: 'day', week: 'week', month: 'month'};
   private loading: boolean;
   private apods: Apod[] = [];
   private date: Date;
   private dateMin: Date;
   private dateMax: Date;
   private dateInput: any;
+  private viewType: string;
+  private displayBtnGroup: Btn[] = [];
 
   constructor(
     private service: ApodService,
@@ -23,6 +26,13 @@ export class ApodComponent implements OnInit {
     this.loading = true;
     this.dateMax = this.dateService.today();
     this.dateMin = this.dateService.parse('06-20-1995', 'MM\\dd\\yyyy');
+    this.viewType = 'day';
+
+    this.displayBtnGroup = [
+      {label: this.VIEWTYPES.day, icon: 'fa fa-calendar'},
+      {label: this.VIEWTYPES.week, icon: 'fa fa-calendar-week'},
+      {label: this.VIEWTYPES.month, icon: 'fa fa-calendar-alt'},
+    ];
   }
 
   ngOnInit() {
@@ -61,5 +71,18 @@ export class ApodComponent implements OnInit {
       }
     );
   }
+
+  /**
+   * Triggered by one of the `Day/Week/Month` buttons
+   * Swaps the view to a known view or leaves it as is
+   * @param viewType
+   */
+  public changeView(viewType: string): void {
+    this.viewType = this.VIEWTYPES[viewType] ? this.VIEWTYPES[viewType] : this.viewType;
+  }
 }
 
+interface Btn {
+  label: string;
+  icon: string; // class to be applied to the <i> tag
+}

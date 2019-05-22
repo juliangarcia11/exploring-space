@@ -2,21 +2,30 @@
   <nb-card-header>
     <div class="title">Astronomy Picture of the Day</div>
     <div class="inputs-container float-right pad-right-2">
+      <app-button-group [buttons]="displayBtnGroup" (click)="changeView($event)"></app-button-group>
       <input nbInput placeholder="Date" [(ngModel)]="dateInput" [nbDatepicker]="datePicker" [disabled]="loading" class="margin-right date-picker-input">
       <nb-datepicker #datePicker [min]="dateMin" [max]="dateMax" (dateChange)="setDate($event)"></nb-datepicker>
       <button nbButton hero status="info" (click)="requestApod()" [disabled]="loading">Go</button>
     </div>
   </nb-card-header>
   <nb-card-body>
-    <nb-card class="apod-card" status="primary" *ngFor="let apod of apods">
-      <nb-card-header>
-        <div>{{ apod.title }}</div>
-        <div class="float-right">{{ apod.date | date:'MM-dd-yyyy' }}</div>
-      </nb-card-header>
-      <nb-card-body>
-        <div>{{ apod.explanation }}</div>
-        <img src="{{ apod.url }}">
-      </nb-card-body>
-    </nb-card>
+    <ng-container *ngIf="viewType === VIEWTYPES.day">
+      <nb-card class="apod-card" status="primary" *ngFor="let apod of apods">
+        <nb-card-header>
+          <div>{{ apod.title }}</div>
+          <div class="float-right">{{ apod.date | date:'MM-dd-yyyy' }}</div>
+        </nb-card-header>
+        <nb-card-body>
+          <div>{{ apod.explanation }}</div>
+          <img src="{{ apod.url }}">
+        </nb-card-body>
+      </nb-card>
+    </ng-container>
+    <ng-container *ngIf="viewType === VIEWTYPES.week">
+      week
+    </ng-container>
+    <ng-container *ngIf="viewType === VIEWTYPES.month">
+      month
+    </ng-container>
   </nb-card-body>
 </nb-card>

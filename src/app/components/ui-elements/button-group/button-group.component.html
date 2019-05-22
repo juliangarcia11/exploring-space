@@ -1,0 +1,6 @@
+<ng-container *ngFor="let button of items">
+  <button nbButton (click)="click.emit(button.label)" class="btn-group-btn">
+    <i *ngIf="button.icon" class="{{ button.icon }}"></i>
+    {{ button.label }}
+  </button>
+</ng-container>
