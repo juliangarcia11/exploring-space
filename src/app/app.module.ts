@@ -42,7 +42,7 @@ import { ButtonGroupComponent } from './components/ui-elements/button-group/butt
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({name: 'cosmic'}),
+    NbThemeModule.forRoot({name: 'cosmic'}), // default, cosmic, corporate
     NbLayoutModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
