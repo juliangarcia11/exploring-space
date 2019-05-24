@@ -23,3 +23,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Thanks!
+
+I would like to extend my thanks to the following people/organizations:
+* [LadyofHats](https://commons.wikimedia.org/wiki/User:LadyofHats)
+* [NASA](https://api.nasa.gov/)
+* [Open Notify](http://open-notify.org/)
+* Angular and Angular CLI
+* NPM
