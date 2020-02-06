@@ -16,7 +16,7 @@ export class ButtonGroupComponent implements OnInit {
   @Input()
     buttons: ButtonGroupObject[];
 
-  @Output() click = new EventEmitter();
+  @Output() btnClicked = new EventEmitter();
 
   private items: ButtonGroupObject[] = [];
 
@@ -30,6 +30,10 @@ export class ButtonGroupComponent implements OnInit {
 
       this.items.push(new ButtonGroupObject(btn));
     }
+  }
+
+  clicked($event) {
+    this.btnClicked.emit($event);
   }
 }
 

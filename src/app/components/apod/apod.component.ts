@@ -79,6 +79,9 @@ export class ApodComponent implements OnInit {
    */
   public changeView(viewType: string): void {
     this.viewType = this.VIEWTYPES[viewType] ? this.VIEWTYPES[viewType] : this.viewType;
+    console.log('%cchanging view', 'background-color: #CBF1D0; font-size: 18px;', {
+      viewType: viewType,
+    });
   }
 }
 

@@ -2,7 +2,7 @@
   <nb-card-header>
     <div class="title">Astronomy Picture of the Day</div>
     <div class="inputs-container float-right pad-right-2">
-      <app-button-group [buttons]="displayBtnGroup" (click)="changeView($event)"></app-button-group>
+      <app-button-group [buttons]="displayBtnGroup" (btnClicked)="changeView($event)"></app-button-group>
       <input nbInput placeholder="Date" [(ngModel)]="dateInput" [nbDatepicker]="datePicker" [disabled]="loading" class="margin-right date-picker-input">
       <nb-datepicker #datePicker [min]="dateMin" [max]="dateMax" (dateChange)="setDate($event)"></nb-datepicker>
       <button nbButton hero status="info" (click)="requestApod()" [disabled]="loading">Go</button>
